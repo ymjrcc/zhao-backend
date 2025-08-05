@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "papers",
+  "info": {
+    "singularName": "paper",
+    "pluralName": "papers",
+    "displayName": "Paper"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "authors": {
+      "type": "string",
+      "required": true
+    },
+    "venue": {
+      "type": "string"
+    },
+    "published_time": {
+      "type": "date"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "category": {
+      "type": "string"
+    },
+    "citations": {
+      "type": "integer"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
