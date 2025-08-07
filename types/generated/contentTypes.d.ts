@@ -543,6 +543,37 @@ export interface ApiPaperPaper extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPapersInfoPapersInfo extends Struct.SingleTypeSchema {
+  collectionName: 'papers_infos';
+  info: {
+    displayName: 'PapersInfo';
+    pluralName: 'papers-infos';
+    singularName: 'papers-info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    journal_papers: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::papers-info.papers-info'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    top_conf: Schema.Attribute.String;
+    total_cites: Schema.Attribute.String;
+    total_papers: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -1134,6 +1165,7 @@ declare module '@strapi/strapi' {
       'api::member.member': ApiMemberMember;
       'api::news.news': ApiNewsNews;
       'api::paper.paper': ApiPaperPaper;
+      'api::papers-info.papers-info': ApiPapersInfoPapersInfo;
       'api::project.project': ApiProjectProject;
       'api::research.research': ApiResearchResearch;
       'plugin::content-releases.release': PluginContentReleasesRelease;

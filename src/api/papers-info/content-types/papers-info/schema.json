@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "papers_infos",
+  "info": {
+    "singularName": "papers-info",
+    "pluralName": "papers-infos",
+    "displayName": "PapersInfo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "top_conf": {
+      "type": "string"
+    },
+    "journal_papers": {
+      "type": "string"
+    },
+    "total_papers": {
+      "type": "string"
+    },
+    "total_cites": {
+      "type": "string"
+    }
+  }
+}
